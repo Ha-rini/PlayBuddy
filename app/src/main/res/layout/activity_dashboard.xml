@@ -1,0 +1,184 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <!-- Logo on Top Left -->
+    <ImageView
+        android:id="@+id/logo_image"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/play_buddy_logo_transbg_sq"
+        android:contentDescription="App Logo"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Icon Buttons on Top Right -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:padding="16dp">
+
+        <!-- Messages Button -->
+
+        <!-- Friend Requests Button -->
+        <ImageButton
+            android:id="@+id/messages_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Messages"
+            android:src="@drawable/ic_message"
+            android:scaleType="fitCenter"
+            />
+
+
+        <ImageButton
+            android:id="@+id/friend_requests_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_friend_requests"
+            android:contentDescription="Friend Requests"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginEnd="16dp"
+            android:scaleType="fitCenter"/>
+
+        <!-- Profile Button -->
+        <ImageButton
+            android:id="@+id/profile_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_profile"
+            android:contentDescription="Profile"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="fitCenter"/>
+    </LinearLayout>
+
+    <!-- Title: Dashboard -->
+    <TextView
+        android:id="@+id/dashboard_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dashboard"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_below="@id/logo_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" />
+
+    <!-- Create New Activity Button -->
+    <Button
+        android:id="@+id/create_event_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create New Activity"
+        android:backgroundTint="@color/primaryColor"
+        android:textColor="@android:color/white"
+        android:layout_below="@id/dashboard_title"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp" />
+
+    <!-- Event List Section -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/create_event_button"
+        android:layout_marginTop="16dp"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- First Event Card -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:padding="16dp"
+                android:orientation="vertical">
+
+                <!-- Event Name -->
+                <TextView
+                    android:id="@+id/event_name_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Foos Football"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Event Details (Place, Sport Type, Date, Time) -->
+                <TextView
+                    android:id="@+id/event_details_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_name_3"
+                    android:layout_marginStart="12dp"
+                    android:text="Place: Combat Arena\nSport: Wrestling | 1/2 Players\nDate: 24 Feb | Time: 3:00 PM" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:padding="16dp"
+                android:orientation="vertical">
+
+                <!-- Event Name -->
+                <TextView
+                    android:id="@+id/event_name_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Power Soccer Club"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Event Details (Place, Sport Type, Date, Time) -->
+                <TextView
+                    android:id="@+id/event_details_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_name_2"
+                    android:layout_marginStart="12dp"
+                    android:text="Place: Soccer City\nSport: Soccer | 6/8 Players\nDate: 22 Feb | Time: 6:00 PM" />
+            </LinearLayout>
+
+            <!-- Event 3 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:padding="16dp"
+                android:orientation="vertical">
+
+                <!-- Event Name -->
+                <TextView
+                    android:id="@+id/event_name_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Axe Wrestling Academy"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Event Details (Place, Sport Type, Date, Time) -->
+                <TextView
+                    android:id="@+id/event_details_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/event_name_3"
+                    android:layout_marginStart="12dp"
+                    android:text="Place: Combat Arena\nSport: Wrestling | 1/2 Players\nDate: 24 Feb | Time: 3:00 PM" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
