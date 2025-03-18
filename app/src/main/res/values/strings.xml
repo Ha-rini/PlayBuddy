@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Play Buddy</string>
+    <string name="login">Login</string>
+    <string name="signup">Sign Up</string>
+    <string name="create_new_activity">Create New Activity</string>
+    <string name="upcoming_events">Upcoming Events</string>
+    <string name="profile">Profile</string>
+    <string name="messages">Messages</string>
+    <string name="friend_requests">Friend Requests</string>
+
+    <string-array name="sports_array">
+        <item>Soccer</item>
+        <item>Basketball</item>
+        <item>Tennis</item>
+        <item>Badminton</item>
+        <item>Cricket</item>
+        <item>Swimming</item>
+        <item>Volleyball</item>
+    </string-array>
+
+</resources>

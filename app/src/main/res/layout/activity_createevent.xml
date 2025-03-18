@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#f4f4f4">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create New Activity"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="16dp"/>
+
+        <!-- Sport Type Selection -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Sport"
+            android:textSize="18sp"
+            android:paddingBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/sport_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/sports_array"
+            android:background="@android:drawable/btn_dropdown"
+            android:padding="12dp"/>
+
+        <!-- Date and Time Selection -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Date and Time"
+            android:textSize="18sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/date_picker"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Select Date"
+                android:focusable="false"
+                android:padding="12dp"
+                android:background="@android:drawable/editbox_background"
+                android:drawableRight="@android:drawable/ic_menu_my_calendar"/>
+
+            <EditText
+                android:id="@+id/time_picker"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Select Time"
+                android:focusable="false"
+                android:padding="12dp"
+                android:background="@android:drawable/editbox_background"
+                android:drawableRight="@android:drawable/ic_menu_recent_history"/>
+        </LinearLayout>
+
+        <!-- Search and Filter by Rates, Amenities, and Location -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filters"
+            android:textSize="18sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"/>
+
+        <CheckBox
+            android:id="@+id/filter_by_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter by Rates"
+            android:paddingBottom="8dp"/>
+
+        <CheckBox
+            android:id="@+id/filter_by_amenities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter by Amenities"
+            android:paddingBottom="8dp"/>
+
+        <CheckBox
+            android:id="@+id/filter_by_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Filter by Location"
+            android:paddingBottom="16dp"/>
+
+        <EditText
+            android:id="@+id/venue_select"
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Select Venue"
+            android:focusable="false"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background"
+            />
+
+        <!-- Invite Friends -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Invite Friends"
+            android:textSize="18sp"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/friends_invite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter friend names or IDs"
+            android:padding="12dp"
+            android:background="@android:drawable/editbox_background" />
+
+        <!-- Create Activity Button -->
+        <Button
+            android:id="@+id/create_activity_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create Event"
+            android:textColor="@color/secondaryColor"
+            android:background="@color/primaryColor"
+            android:padding="16dp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"/>
+
+    </LinearLayout>
+</ScrollView>
