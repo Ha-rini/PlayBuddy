@@ -11,85 +11,93 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class SignupDetailsActivity extends AppCompatActivity {
 
-    private EditText etUsername, etPhone, etLocality, etLocation;
-    private Button btnSignupComplete;
-    private ProgressBar progressBarSignupDetails;
+    private EditText etUsername, etPhone, etCity, etLocality;
+    private Button btnSaveDetails;
+    private ProgressBar progressBarDetails;
 
-    private String email, password;
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
+
+    private String emailFromPreviousScreen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signupdetails);
 
-        // Get email and password from the previous screen
-        email = getIntent().getStringExtra("email");
-        password = getIntent().getStringExtra("password");
-
-        // Initialize views
         etUsername = findViewById(R.id.etUsername);
         etPhone = findViewById(R.id.etPhone);
+        etCity = findViewById(R.id.etLocation);
         etLocality = findViewById(R.id.etLocality);
-        etLocation = findViewById(R.id.etLocation);
-        btnSignupComplete = findViewById(R.id.btnSignupComplete);
-        progressBarSignupDetails = findViewById(R.id.progressBarSignupDetails);
+        btnSaveDetails = findViewById(R.id.btnSignupComplete);
+        progressBarDetails = findViewById(R.id.progressBarSignupDetails);
 
-        // Complete Signup button listener
-        btnSignupComplete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                completeSignup();
-            }
-        });
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+
+        // Get email from previous screen
+        emailFromPreviousScreen = getIntent().getStringExtra("email");
+
+        btnSaveDetails.setOnClickListener(v -> saveUserDetails());
     }
 
-    private void completeSignup() {
+    private void saveUserDetails() {
         String username = etUsername.getText().toString().trim();
         String phone = etPhone.getText().toString().trim();
+        String city = etCity.getText().toString().trim();
         String locality = etLocality.getText().toString().trim();
-        String location = etLocation.getText().toString().trim();
 
-        // Show the progress bar while validating the input
-        progressBarSignupDetails.setVisibility(View.VISIBLE);
+        progressBarDetails.setVisibility(View.VISIBLE);
 
-        // Validate fields
         if (TextUtils.isEmpty(username)) {
-            showToast("Please enter a username");
-            progressBarSignupDetails.setVisibility(View.GONE);
+            Toast.makeText(this, "Please enter your username", Toast.LENGTH_SHORT).show();
+            progressBarDetails.setVisibility(View.GONE);
             return;
         }
 
-        if (TextUtils.isEmpty(phone) || phone.length() != 10) {
-            showToast("Please enter a valid phone number");
-            progressBarSignupDetails.setVisibility(View.GONE);
+        if (TextUtils.isEmpty(phone)) {
+            Toast.makeText(this, "Please enter your phone number", Toast.LENGTH_SHORT).show();
+            progressBarDetails.setVisibility(View.GONE);
             return;
         }
 
-        if (TextUtils.isEmpty(locality)) {
-            showToast("Please enter your locality");
-            progressBarSignupDetails.setVisibility(View.GONE);
+        if (TextUtils.isEmpty(city)) {
+            Toast.makeText(this, "Please enter your city", Toast.LENGTH_SHORT).show();
+            progressBarDetails.setVisibility(View.GONE);
             return;
         }
 
-        if (TextUtils.isEmpty(location)) {
-            showToast("Please enter your location");
-            progressBarSignupDetails.setVisibility(View.GONE);
-            return;
-        }
+        String userId = mAuth.getCurrentUser().getUid();
 
-        // Here you can save the data or send it to a server
+        Map<String, Object> user = new HashMap<>();
+        user.put("name", username); // for welcome message in Login
+        user.put("username", username);
+        user.put("phone", phone);
+        user.put("city", city);
+        user.put("locality", locality);
+        user.put("email", emailFromPreviousScreen);
 
-        // After completing signup, go to login screen
-        progressBarSignupDetails.setVisibility(View.GONE);
-        Intent intent = new Intent(SignupDetailsActivity.this, LoginActivity.class);
-        startActivity(intent);
-        finish();
-    }
+        db.collection("users").document(userId)
+                .set(user)
+                .addOnCompleteListener(task -> {
+                    progressBarDetails.setVisibility(View.GONE);
 
-    private void showToast(String message) {
-        Toast.makeText(SignupDetailsActivity.this, message, Toast.LENGTH_SHORT).show();
+                    if (task.isSuccessful()) {
+                        Toast.makeText(SignupDetailsActivity.this, "Details saved successfully!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(SignupDetailsActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Toast.makeText(SignupDetailsActivity.this, "Error saving details: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }
-

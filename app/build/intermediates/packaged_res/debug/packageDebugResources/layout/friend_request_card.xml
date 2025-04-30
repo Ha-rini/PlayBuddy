@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:elevation="6dp"
+    android:padding="16dp"
+    android:radius="16dp"
+    android:backgroundTint="@color/backgroundColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Name -->
+        <TextView
+            android:id="@+id/requester_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Requester Name"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/primaryColor"
+            android:paddingBottom="4dp" />
+
+        <!-- Contact -->
+        <TextView
+            android:id="@+id/contact_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone + Locality"
+            android:textSize="15sp"
+            android:textColor="#555555"
+            android:paddingBottom="8dp" />
+
+        <!-- Event Details -->
+        <TextView
+            android:id="@+id/event_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event details"
+            android:textSize="15sp"
+            android:textColor="#444444"
+            android:paddingBottom="12dp" />
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <Button
+                android:id="@+id/reject_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✕"
+                android:textColor="@color/backgroundColor"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:layout_marginEnd="12dp" />
+
+            <Button
+                android:id="@+id/accept_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✓"
+                android:textColor="@color/backgroundColor"
+                android:backgroundTint="@android:color/holo_green_dark" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

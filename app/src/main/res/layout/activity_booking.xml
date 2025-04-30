@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    android:background="#ffffff">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Booking Details"
+            android:textSize="26sp"
+            android:textColor="@color/primaryColor"
+            android:textStyle="bold" />
+
+        <!-- Booking Summary -->
+        <TextView
+            android:id="@+id/booking_summary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="16sp"
+            android:textColor="@color/secondaryColor"
+            android:text="Sport: \nDate: \nTime: \nVenue:" />
+
+        <!-- Number of People -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of People"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/secondaryColor" />
+
+        <EditText
+            android:id="@+id/num_people_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_bg"
+            android:hint="Enter number of people"
+            android:inputType="number"
+            android:padding="12dp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <!-- Number of Hours -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number of Hours"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:textColor="@color/secondaryColor" />
+
+        <EditText
+            android:id="@+id/num_hours_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_bg"
+            android:hint="Enter number of hours"
+            android:inputType="number"
+            android:padding="12dp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <!-- Total Rate -->
+        <TextView
+            android:id="@+id/total_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Rate: ₹0"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/primaryColor" />
+
+        <!-- Proceed to Payment -->
+        <Button
+            android:id="@+id/proceed_to_payment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Proceed to Payment"
+            android:textColor="@color/backgroundColor"
+            android:backgroundTint="@color/primaryColor"
+            android:textStyle="bold"
+            android:padding="14dp" />
+
+    </LinearLayout>
+</ScrollView>

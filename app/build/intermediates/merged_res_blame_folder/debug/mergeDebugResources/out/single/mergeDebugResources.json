@@ -1,0 +1,182 @@
+[
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_ic_location.png.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/ic_location.png"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/layout_friend_request_card.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/layout/friend_request_card.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_ic_message.png.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/ic_message.png"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/layout_activity_booking.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/layout/activity_booking.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/layout_activity_payment.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/layout/activity_payment.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_play_buddy_logo_w_bg.png.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/play_buddy_logo_w_bg.png"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_edittext_bg.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/edittext_bg.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/layout_activity_login.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_play_buddy_logo_transbg_sq.png.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/play_buddy_logo_transbg_sq.png"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_profile_gradient.png.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/profile_gradient.png"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_ic_calendar.png.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/ic_calendar.png"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/layout_activity_bookingconfirmation.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/layout/activity_bookingconfirmation.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_ic_profile.png.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/ic_profile.png"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_play_buddy_logo_transbg.png.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/play_buddy_logo_transbg.png"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/mipmap-anydpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/layout_activity_profile.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/layout_activity_main.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_ic_clock.png.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/ic_clock.png"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/layout_activity_signupdetails.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/layout/activity_signupdetails.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_spinner_bg.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/spinner_bg.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/layout_splash_screen.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/layout/splash_screen.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/mipmap-anydpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/layout_activity_createevent.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/layout/activity_createevent.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_play_buddy_bg.png.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/play_buddy_bg.png"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_ic_check_circle.png.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/ic_check_circle.png"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/layout_activity_messages.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/layout/activity_messages.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/xml_backup_rules.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/layout_activity_friendrequests.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/layout/activity_friendrequests.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_ic_friend_requests.png.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/ic_friend_requests.png"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/layout_activity_dashboard.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/layout/activity_dashboard.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/layout_activity_signup.xml.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/layout/activity_signup.xml"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.example.play_buddy_v2.app-debug-44:/drawable_ic_people.png.flat",
+        "source": "com.example.play_buddy_v2.app-main-46:/drawable/ic_people.png"
+    }
+]

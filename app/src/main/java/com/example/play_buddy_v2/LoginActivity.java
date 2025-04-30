@@ -12,6 +12,11 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText etEmail, etPassword;
@@ -19,34 +24,26 @@ public class LoginActivity extends AppCompatActivity {
     private TextView tvSignupLink;
     private ProgressBar progressBarLogin;
 
+    private FirebaseAuth mAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Initialize views
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
         btnLogin = findViewById(R.id.btnLogin);
         tvSignupLink = findViewById(R.id.tvSignupLink);
         progressBarLogin = findViewById(R.id.progressBarLogin);
 
-        // Login button click listener
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loginUser();
-            }
-        });
+        mAuth = FirebaseAuth.getInstance();
 
-        // Sign-up link click listener
-        tvSignupLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Open the Signup activity
-                Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
-                startActivity(intent);
-            }
+        btnLogin.setOnClickListener(v -> loginUser());
+
+        tvSignupLink.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+            startActivity(intent);
         });
     }
 
@@ -54,10 +51,8 @@ public class LoginActivity extends AppCompatActivity {
         String email = etEmail.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
 
-        // Show the progress bar while validating credentials
         progressBarLogin.setVisibility(View.VISIBLE);
 
-        // Validate email and password
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
             progressBarLogin.setVisibility(View.GONE);
@@ -70,19 +65,38 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        // Simulate a login operation (replace with actual authentication)
-        if (email.equals("test@example.com") && password.equals("password123")) {
-            // Login successful
-            progressBarLogin.setVisibility(View.GONE);
-            Toast.makeText(this, "Login successful!", Toast.LENGTH_SHORT).show();
-            // Navigate to the dashboard or main activity
-            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
-            startActivity(intent);
-            finish();
-        } else {
-            // Login failed
-            progressBarLogin.setVisibility(View.GONE);
-            Toast.makeText(this, "Invalid email or password", Toast.LENGTH_SHORT).show();
-        }
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    progressBarLogin.setVisibility(View.GONE);
+
+                    if (task.isSuccessful()) {
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        if (user != null) {
+                            String userId = user.getUid();
+                            FirebaseFirestore db = FirebaseFirestore.getInstance();
+                            db.collection("users").document(userId)
+                                    .get()
+                                    .addOnCompleteListener(task1 -> {
+                                        if (task1.isSuccessful()) {
+                                            DocumentSnapshot document = task1.getResult();
+                                            if (document.exists()) {
+                                                String name = document.getString("name");
+                                                Toast.makeText(LoginActivity.this, "Welcome " + name, Toast.LENGTH_SHORT).show();
+
+                                                Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+                                                startActivity(intent);
+                                                finish();
+                                            } else {
+                                                Toast.makeText(LoginActivity.this, "User data not found.", Toast.LENGTH_SHORT).show();
+                                            }
+                                        } else {
+                                            Toast.makeText(LoginActivity.this, "Error fetching user data.", Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                        }
+                    } else {
+                        Toast.makeText(LoginActivity.this, "Invalid email or password", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

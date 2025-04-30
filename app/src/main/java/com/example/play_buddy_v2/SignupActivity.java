@@ -3,7 +3,6 @@ package com.example.play_buddy_v2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,82 +11,64 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class SignupActivity extends AppCompatActivity {
 
-    private EditText etEmail, etPassword, etConfirmPassword;
-    private Button btnNext;
+    private EditText etEmail, etPassword;
+    private Button btnSignup;
     private ProgressBar progressBarSignup;
+
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
-        // Initialize views
         etEmail = findViewById(R.id.etEmail);
         etPassword = findViewById(R.id.etPassword);
-        etConfirmPassword = findViewById(R.id.etConfirmPassword);
-        btnNext = findViewById(R.id.btnNext);
+        btnSignup = findViewById(R.id.btnNext);
         progressBarSignup = findViewById(R.id.progressBarSignup);
 
-        // Next button click listener
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                validateAndProceed();
-            }
-        });
+        mAuth = FirebaseAuth.getInstance();
+
+        btnSignup.setOnClickListener(v -> createUser());
     }
 
-    private void validateAndProceed() {
+    private void createUser() {
         String email = etEmail.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
-        String confirmPassword = etConfirmPassword.getText().toString().trim();
 
-        // Show the progress bar while validating the input
         progressBarSignup.setVisibility(View.VISIBLE);
 
-        // Validate fields
         if (TextUtils.isEmpty(email)) {
-            showToast("Please enter an email");
-            progressBarSignup.setVisibility(View.GONE);
-            return;
-        }
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            showToast("Please enter a valid email");
+            Toast.makeText(this, "Please enter your email", Toast.LENGTH_SHORT).show();
             progressBarSignup.setVisibility(View.GONE);
             return;
         }
 
         if (TextUtils.isEmpty(password)) {
-            showToast("Please enter a password");
+            Toast.makeText(this, "Please enter your password", Toast.LENGTH_SHORT).show();
             progressBarSignup.setVisibility(View.GONE);
             return;
         }
 
-        if (password.length() < 6) {
-            showToast("Password must be at least 6 characters");
-            progressBarSignup.setVisibility(View.GONE);
-            return;
-        }
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, task -> {
+                    progressBarSignup.setVisibility(View.GONE);
 
-        if (!password.equals(confirmPassword)) {
-            showToast("Passwords do not match");
-            progressBarSignup.setVisibility(View.GONE);
-            return;
-        }
+                    if (task.isSuccessful()) {
+                        Toast.makeText(SignupActivity.this, "Sign-up successful! Please provide additional details.", Toast.LENGTH_SHORT).show();
 
-        // Proceed to next screen for additional details
-        progressBarSignup.setVisibility(View.GONE);
-        Intent intent = new Intent(SignupActivity.this, SignupDetailsActivity.class);
-        intent.putExtra("email", email);
-        intent.putExtra("password", password);
-        startActivity(intent);
-        finish();
-    }
-
-    private void showToast(String message) {
-        Toast.makeText(SignupActivity.this, message, Toast.LENGTH_SHORT).show();
+                        // Pass email to next screen
+                        Intent intent = new Intent(SignupActivity.this, SignupDetailsActivity.class);
+                        intent.putExtra("email", email);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Toast.makeText(SignupActivity.this, "Sign-up failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

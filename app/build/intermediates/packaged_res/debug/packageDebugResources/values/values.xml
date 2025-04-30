@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sports_array">
+        <item>Soccer</item>
+        <item>Basketball</item>
+        <item>Tennis</item>
+        <item>Badminton</item>
+        <item>Cricket</item>
+        <item>Swimming</item>
+        <item>Volleyball</item>
+    </string-array>
+    <color name="backgroundColor">#FFFFFF</color>
+    <color name="primaryColor">#FF6D00</color>
+    <color name="secondaryColor">#000000</color>
+    <string name="app_name">Play Buddy</string>
+    <string name="create_new_activity">Create New Activity</string>
+    <string name="friend_requests">Friend Requests</string>
+    <string name="gcm_defaultSenderId" translatable="false">1078621744519</string>
+    <string name="google_api_key" translatable="false">AIzaSyBtSLVmMn_22dW9fBO_K-4Nq5ug_XTlRC4</string>
+    <string name="google_app_id" translatable="false">1:1078621744519:android:2170f98b7ca895433bb722</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBtSLVmMn_22dW9fBO_K-4Nq5ug_XTlRC4</string>
+    <string name="google_maps_key">AIzaSyACWGmAkZ6gbFTI1_7UF6mc6Ga7jNidWCQ</string>
+    <string name="google_storage_bucket" translatable="false">playbuddy-588dd.firebasestorage.app</string>
+    <string name="login">Login</string>
+    <string name="messages">Messages</string>
+    <string name="profile">Profile</string>
+    <string name="project_id" translatable="false">playbuddy-588dd</string>
+    <string name="signup">Sign Up</string>
+    <string name="upcoming_events">Upcoming Events</string>
+    <style name="Base.Theme.Play_buddy_v2" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.Play_buddy_v2" parent="Base.Theme.Play_buddy_v2"/>
+</resources>

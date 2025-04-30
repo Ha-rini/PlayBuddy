@@ -2,7 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+
     <application
+        android:name=".MyApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -39,6 +46,36 @@
             android:name=".DashboardActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".CreateNewActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".BookingActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".BookingConfirmationActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".FriendRequestsActivity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false">
+        </activity>
+
         <!-- Main activity (not used but kept as placeholder, exported false) -->
         <activity
             android:name=".MainActivity"
@@ -47,6 +84,15 @@
 
 
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyACWGmAkZ6gbFTI1_7UF6mc6Ga7jNidWCQ"/>
+
+
+
+
     </application>
+
+
 
 </manifest>
