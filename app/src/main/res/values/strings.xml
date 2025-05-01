@@ -18,7 +18,7 @@
         <item>Volleyball</item>
     </string-array>
 
-    <string name="google_maps_key">AIzaSyACWGmAkZ6gbFTI1_7UF6mc6Ga7jNidWCQ</string>
+    <string name="google_maps_key">API Key</string>
 
 
 </resources>
